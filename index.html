@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Expense Tracker</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+                <h1><i class="fas fa-wallet"></i> Smart Expense Tracker</h1>
+                <p class="header-subtitle">Track your finances with ease and precision</p>
+            </div>
+            <div class="balance-display">
+                <div class="current-balance">
+                    <h2>Current Balance</h2>
+                    <p id="total-balance">$0.00</p>
+                </div>
+                <div class="totals">
+                    <div class="income-card">
+                        <h3><i class="fas fa-arrow-up"></i> Income</h3>
+                        <p id="total-income">$0.00</p>
+                    </div>
+                    <div class="expense-card">
+                        <h3><i class="fas fa-arrow-down"></i> Expenses</h3>
+                        <p id="total-expense">$0.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="reset-btn" class="btn btn-danger">
+                    <i class="fas fa-trash"></i> Reset All
+                </button>
+                <button id="theme-toggle" class="btn btn-secondary">
+                    <span class="light-icon"><i class="fas fa-sun"></i></span>
+                    <span class="dark-icon"><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-wallet"></i>
+                <span>SmartExpense</span>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#dashboard" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#transactions" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transactions</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#summary" class="nav-link">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Summary</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#platform-info" class="nav-link">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="dashboard" class="balance-section">
+            <div class="balance-header">
+                <h2>Smart Expense Tracker</h2>
+                <p>Track your finances with ease and precision</p>
+            </div>
+            <div class="balance-grid">
+                <div class="balance-card">
+                    <h3>Current Balance</h3>
+                    <p class="amount">$2750.00</p>
+                </div>
+                <div class="balance-card">
+                    <h3>Income</h3>
+                    <p class="amount">$3000.00</p>
+                </div>
+                <div class="balance-card">
+                    <h3>Expenses</h3>
+                    <p class="amount">$250.00</p>
+                </div>
+            </div>
+            <div class="balance-actions">
+                <button class="btn btn-reset">
+                    <i class="fas fa-redo"></i>
+                    Reset All
+                </button>
+            </div>
+        </section>
+
+        <!-- Platform Information Section -->
+        <section id="platform-info" class="section info-section">
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Track Expenses</h3>
+                    <p>Monitor your daily expenses and income with detailed categorization</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Visual Analytics</h3>
+                    <p>Get insights through interactive charts and monthly summaries</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Access your financial data on any device, anywhere</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-moon"></i>
+                    <h3>Dark Mode</h3>
+                    <p>Switch between light and dark themes for comfortable viewing</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure</h3>
+                    <p>Your data is protected with the latest security standards</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Customizable</h3>
+                    <p>Personalize your experience with various settings and preferences</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="add-transaction" class="section">
+            <h2><i class="fas fa-plus-circle"></i> Add New Transaction</h2>
+            <form id="transaction-form">
+                <div class="form-group">
+                    <label for="transaction-type">Type</label>
+                    <select id="transaction-type" required>
+                        <option value="income"><i class="fas fa-arrow-up"></i> Income</option>
+                        <option value="expense"><i class="fas fa-arrow-down"></i> Expense</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="transaction-title">Title</label>
+                    <input type="text" id="transaction-title" required placeholder="Enter title">
+                </div>
+                <div class="form-group">
+                    <label for="transaction-amount">Amount</label>
+                    <input type="number" id="transaction-amount" required min="0" step="0.01" placeholder="0.00">
+                </div>
+                <div class="form-group">
+                    <label for="transaction-date">Date</label>
+                    <input type="date" id="transaction-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="transaction-category">Category</label>
+                    <select id="transaction-category" required>
+                        <option value="salary"><i class="fas fa-money-bill-wave"></i> Salary</option>
+                        <option value="food"><i class="fas fa-utensils"></i> Food</option>
+                        <option value="transport"><i class="fas fa-car"></i> Transport</option>
+                        <option value="entertainment"><i class="fas fa-film"></i> Entertainment</option>
+                        <option value="utilities"><i class="fas fa-bolt"></i> Utilities</option>
+                        <option value="other"><i class="fas fa-ellipsis-h"></i> Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Add Transaction
+                </button>
+            </form>
+        </section>
+
+        <section id="transaction-history" class="section">
+            <h2><i class="fas fa-history"></i> Transaction History</h2>
+            <div class="table-container">
+                <table id="transactions-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactions-body">
+                        <!-- Transactions will be added here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="monthly-summary" class="section">
+            <h2><i class="fas fa-chart-line"></i> Monthly Summary</h2>
+            <div class="summary-controls">
+                <select id="month-select">
+                    <!-- Months will be populated by JS -->
+                </select>
+                <select id="year-select">
+                    <!-- Years will be populated by JS -->
+                </select>
+            </div>
+            <div class="summary-content">
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <h3><i class="fas fa-arrow-up"></i> Monthly Income</h3>
+                        <p id="monthly-income">$0.00</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3><i class="fas fa-arrow-down"></i> Monthly Expenses</h3>
+                        <p id="monthly-expense">$0.00</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3><i class="fas fa-balance-scale"></i> Net Balance</h3>
+                        <p id="monthly-balance">$0.00</p>
+                    </div>
+                </div>
+                <div class="top-categories">
+                    <h3><i class="fas fa-trophy"></i> Top Categories</h3>
+                    <ul id="top-categories-list">
+                        <!-- Will be populated by JS -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="charts" class="section">
+            <h2><i class="fas fa-chart-pie"></i> Expense Analytics</h2>
+            <div class="charts-container">
+                <div class="chart-wrapper">
+                    <canvas id="bar-chart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="pie-chart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Smart Expense Tracker</h3>
+                <p>A powerful tool to help you manage your finances effectively. Track your expenses, analyze spending patterns, and make informed financial decisions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Features</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Real-time expense tracking</li>
+                    <li><i class="fas fa-check"></i> Interactive charts and analytics</li>
+                    <li><i class="fas fa-check"></i> Monthly summaries and reports</li>
+                    <li><i class="fas fa-check"></i> Dark mode support</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Developed with <i class="fas fa-heart"></i> by <a href="https://github.com/yourusername" target="_blank">Your Name</a></p>
+            <p>Built with <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> <i class="fab fa-js"></i> <i class="fas fa-chart-bar"></i></p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html> 
