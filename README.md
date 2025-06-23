@@ -1,8 +1,10 @@
 # 💸 Expense Tracker Web App
 An interactive and fully responsive Expense Tracker built with HTML, CSS, and JavaScript. Track your income and expenses, visualize your data with beautiful charts, and manage your finances smartly — all in your browser.
 
-## 🌐 Live Preview
-[🔗 Open Live Preview](https://expense-track-personal.netlify.app/)
+## 🌐 Live Demo
+
+👉 **Click here to open the live app** (https://expense-track-personal.netlify.app/)
+
 
 
 ### 📸 Screenshots
