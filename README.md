@@ -3,7 +3,7 @@ An interactive and fully responsive Expense Tracker built with HTML, CSS, and Ja
 
 ## 🌐 Live Demo
 
-👉 [**Click here to open the live app**] (https://expense-track-personal.netlify.app/)
+👉 [**Click here to open the live app**](https://expense-track-personal.netlify.app/)
 
 ## 🚀 Features
 ✅ Add income and expense transactions with custom details
