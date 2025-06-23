@@ -19,13 +19,15 @@ Add screenshots or screen recordings here to showcase UI and features.
 ✅ Clean and modern UI/UX
 
 ## ⚙️ Tech Stack & Tools Used
-Tool	Description
+### Tool	Description
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="24"/> HTML5	Markup structure
+
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="24"/> CSS3	Styling and layout
+
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="24"/> JavaScript (ES6+)	Core logic and interactivity
+
 <img src="https://www.chartjs.org/media/logo-title.svg" height="24"/> Chart.js	Data visualizations
-<img src="https://img.icons8.com/ios-filled/50/000000/font-awesome.png" height="24"/> Font Awesome	Icons
-🧠 LocalStorage API	Save data in the browser
+
 <img src="https://img.icons8.com/ios-filled/50/github.png" height="24"/> Git & GitHub	Version control and hosting
 
 ## 📁 Project Structure
