@@ -7,13 +7,19 @@ An interactive and fully responsive Expense Tracker built with HTML, CSS, and Ja
 
 ## 🚀 Features
 ✅ Add income and expense transactions with custom details
+
 ✅ Real-time balance calculation (monthly + overall)
+
 ✅ Bar and Pie charts using Chart.js
+
 ✅ Top 3 expense categories highlighted monthly
+
 ✅ Smooth scroll navbar with section highlights
+
 ✅ Light/Dark theme toggle (with localStorage save)
+
 ✅ Fully responsive on all screen sizes
-✅ Data persists via browser localStorage\
+
 ✅ Clean and modern UI/UX
 
 ## ⚙️ Tech Stack & Tools Used
